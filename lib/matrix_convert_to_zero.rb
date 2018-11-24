@@ -6,36 +6,9 @@ require 'pry'
 
 def matrix_convert_to_0(matrix)
 
-  # matrix.each do |row|
-  #
-  #   # i = 0
-  #   #
-  #   # while i < row.length
-  #   #   j = 0
-  #   #
-  #   #   if row[i] == 0
-  #   #     while j < row.length
-  #   #       row[j] = 0
-  #   #       j += 1
-  #   #     end
-  #   #   end
-  #   #
-  #   #   i += 1
-  #   # end
-  #
-  #   row.each_with_index do |column, index|
-  #
-  #     if column == 0
-  #       j = 0
-  #       while j < row.length
-  #         row[j] = 0
-  #         j += 1
-  #       end
-  #     end
-  #   end
-  #
-  # end
-  # return matrix
+  if matrix == [] 
+    return matrix
+  end
 
   outer_row_flag = false
   outer_column_flag = false
@@ -112,5 +85,37 @@ def matrix_convert_to_0(matrix)
       row +=1
     end
   end
+
+#This on doesn't work, need to fix later by storing column and row indicators
+  # matrix.each do |row|
+  #
+  #   # i = 0
+  #   #
+  #   # while i < row.length
+  #   #   j = 0
+  #   #
+  #   #   if row[i] == 0
+  #   #     while j < row.length
+  #   #       row[j] = 0
+  #   #       j += 1
+  #   #     end
+  #   #   end
+  #   #
+  #   #   i += 1
+  #   # end
+  #
+  #   row.each_with_index do |column, index|
+  #
+  #     if column == 0
+  #       j = 0
+  #       while j < row.length
+  #         row[j] = 0
+  #         j += 1
+  #       end
+  #     end
+  #   end
+  #
+  # end
+  # return matrix
 
 end
