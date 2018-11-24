@@ -6,7 +6,7 @@ require 'pry'
 
 def matrix_convert_to_0(matrix)
 
-  if matrix == [] 
+  if matrix == []
     return matrix
   end
 
@@ -34,7 +34,6 @@ def matrix_convert_to_0(matrix)
     end
     col += 1
   end
-
 
   puts "R: #{outer_row_flag}"
 
@@ -86,7 +85,7 @@ def matrix_convert_to_0(matrix)
     end
   end
 
-#This on doesn't work, need to fix later by storing column and row indicators
+  #This on doesn't work, need to fix later by storing column and row indicators
   # matrix.each do |row|
   #
   #   # i = 0
