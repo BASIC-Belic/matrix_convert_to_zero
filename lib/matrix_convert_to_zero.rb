@@ -25,8 +25,6 @@ def matrix_convert_to_0(matrix)
     row += 1
   end
 
-  puts "C #{outer_column_flag}"
-
   while matrix[0][col] != nil
     if matrix[0][col] == 0
       outer_row_flag = true
@@ -34,56 +32,71 @@ def matrix_convert_to_0(matrix)
     end
     col += 1
   end
-
-  puts "R: #{outer_row_flag}"
+  # puts "init #{matrix}"
 
   row = 1
   col = 1
 
   while matrix[row] != nil
-    while matrix[0][col] != nil
+    col = 1
+    while matrix[row][col] != nil
+
+      # puts "#{matrix[row][col]} == 0?"
       if matrix[row][col] == 0
+        # puts "before:  #{matrix}"
         matrix[row][0] = 0
         matrix[0][col] = 0
+        # puts "updating outer row and col \n #{matrix}"
       end
       col += 1
     end
     row += 1
   end
 
-  row = 1
+  # puts "row change #{matrix}\n"
+
+  row = 0
   while matrix[row] != nil
     if matrix[row][0] == 0
-      matrix[row][0] = 0
+      col = 1
+      while matrix[row][col] != nil
+        matrix[row][col] = 0
+        col += 1
+      end
     end
     row += 1
   end
+  #
+  # puts "column change #{matrix}\n"
 
   col = 1
   while matrix[0][col] != nil
     if matrix[0][col] == 0
-      matrix[0][col] = 0
+      row = 1
+      while matrix[row] != nil
+        matrix[row][col] = 0
+        row += 1
+      end
     end
     col += 1
   end
 
-  col = 0
+  # col = 0
+  # if outer_row_flag == true
+  #   while matrix[0][col] != nil
+  #     matrix[0][col] = 0
+  #     col += 1
+  #   end
+  # end
 
-  if outer_row_flag == true
-    while matrix[0][col] != nil
-      matrix[0][col] = 0
-      col += 1
-    end
-  end
 
-
-  row = 0
-  if outer_column_flag == true
-    while matrix[row] != nil
-      matrix[row][0] = 0
-      row +=1
-    end
-  end
+  # row = 0
+  # if outer_column_flag == true
+  #   while matrix[row] != nil
+  #     matrix[row][0] = 0
+  #     row +=1
+  #   end
+  # end
 
   #This on doesn't work, need to fix later by storing column and row indicators
   # matrix.each do |row|
